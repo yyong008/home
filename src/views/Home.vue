@@ -5,30 +5,27 @@
       <div class="">
         <img class="img" src="../assets/images/jiushu.jpeg" alt="">
       </div>
-      <pre class="desc shadow-outline">
+      <pre class="shadow-outline desc">
 >> 希望是美好的，也许是人间至善，而美好的事物永不消逝。
 
                                       - 肖生克的救赎</pre>
     </div>
     <!-- 目录 -->
-    <div
-      class="flex flex-col bg-box p-8 w-1/5 md:w-1/5 text-orange-600 text-sm font-medium"
-    >
-      <div class="font-bold text-3xl">Yongの杂货铺</div>
-      <div class="flex justify-between blog-item" v-for="(item) in collections" :key="item.id">
-        <a :href="item.href">{{item.name}}</a>
-        <span class="iconfont iconjiantouxiangyou align-bottom"></span>
-      </div>
-    </div>
+    <div class="text-3xl font-bold">Yongの杂货铺</div>
+
+    <main-list :collections="collections"></main-list>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import BlogList from './config'
-
+import MainList from '../components/MainList.vue'
 @Component({
-  name: 'Home'
+  name: 'Home',
+  components: {
+    MainList
+  }
 })
 export default class Home extends Vue {
   private collections = BlogList
