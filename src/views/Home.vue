@@ -2,18 +2,22 @@
   <div class="flex justify-end h-screen bg-orange-400 bg-img">
     <!-- 名言 -->
     <div class="flex justify-center items-center w-1=4/5 md:w-4/5">
+    <!-- 图片 -->
       <div class="">
         <img class="img" src="../assets/images/jiushu.jpeg" alt="">
       </div>
+      <!-- 引言 -->
       <pre class="shadow-outline desc">
+
 >> 希望是美好的，也许是人间至善，而美好的事物永不消逝。
 
                                       - 肖生克的救赎</pre>
     </div>
     <!-- 目录 -->
-    <div class="text-3xl font-bold">Yongの杂货铺</div>
-
-    <main-list :collections="collections"></main-list>
+    <div class="directory">
+      <div class="text-xl font-bold text-center text-purple-500 text-shadow-2xl">Yongの杂货铺</div>
+      <main-list  class="main-list" :collections="collections"></main-list>
+    </div>
   </div>
 </template>
 
@@ -33,6 +37,13 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss">
+.directory {
+  /* background: red; */
+}
+.main-list {
+  /* background: blue; */
+  margin: 8px;
+}
 .bg-img {
   background-image: url('../assets/bg01.jpg');
   background-size: cover;
@@ -51,9 +62,6 @@ export default class Home extends Vue {
   background: rgba(0,0,0,.2);
   border-radius: 4px;
   text-shadow:0 0 30px #ff6701;
-}
-.bg-box {
-  background: rgba(0,0,0,.1)
 }
 .blog-item {
   display: block;
