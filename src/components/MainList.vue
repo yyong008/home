@@ -10,12 +10,17 @@
         @mouseenter="onMouseEnter(item)"
         @mouseleave="onMouseLeave(item)"
         >
-        <div class="flex justify-between blog-item" @click="toggleShowState(item)">
+        <div
+          class="flex justify-between blog-item"
+          @click="toggleShowState(item)"
+        >
           <a :href="item.href">{{item.name}}</a>
           <i class="align-bottom iconfont iconjiantouxiangyou"></i>
         </div>
         <transition name="fade">
-         <main-list v-if="shouldActiveId === item.id && hasChildrenAndShowChild" :collections="item.childrens"></main-list>
+          <main-list
+            v-if="shouldActiveId === item.id && hasChildrenAndShowChild" :collections="item.childrens">
+          </main-list>
         </transition>
       </div>
     </div>
@@ -58,9 +63,10 @@ export default class MainList extends Vue {
   overflow: hidden;
 }
 .fade-enter-active, .fade-leave-active {
-  transition: all .2s;
+  transition: all 1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+  height: 0px;
 }
 </style>

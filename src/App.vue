@@ -16,7 +16,12 @@ import Home from './views/Home.vue'
   }
 })
 export default class App extends Vue {
-
+  mounted () {
+    document.title = 'this is App'
+  }
+  beforeDestory () {
+    document.title = 'this is no App'
+  }
 }
 </script>
 
